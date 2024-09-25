@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-include device/google/gs-common/bootctrl/bootctrl_aidl.mk
-
 include device/google/zuma/dumpstate/item.mk
 
 TARGET_BOARD_PLATFORM := zuma
@@ -57,7 +55,7 @@ PRODUCT_SOONG_NAMESPACES += \
 	vendor/google_nos/test/system-test-harness \
 	vendor/google/camera
 
-LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image.lz4
+#LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image.lz4
 
 # Set the environment variable to switch the Keymint HAL service to Rust
 TRUSTY_KEYMINT_IMPL := rust
@@ -308,7 +306,7 @@ PRODUCT_ENFORCE_PRODUCT_PARTITION_INTERFACE := true
 
 # Init files
 PRODUCT_COPY_FILES += \
-	$(LOCAL_KERNEL):kernel \
+	#$(LOCAL_KERNEL):kernel \
 	device/google/zuma/conf/init.zuma.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.zuma.usb.rc \
 	device/google/zuma/conf/ueventd.zuma.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
